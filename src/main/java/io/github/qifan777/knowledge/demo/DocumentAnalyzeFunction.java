@@ -15,9 +15,14 @@ public class DocumentAnalyzeFunction implements Function<DocumentAnalyzeFunction
     @Override
     public String apply(Request request) {
         FileSystemResource resource = new FileSystemResource(request.path);
-        return new TikaDocumentReader(resource).read().get(0).getContent();
+        return new TikaDocumentReader(resource).read().get(0).getText();
     }
 
+    /**
+     * 文档解析请求
+     *
+     * @param path 需要解析的文件绝对路径（服务端本地路径）
+     */
     public record Request(@JsonProperty(required = true)
                           @JsonPropertyDescription("需要解析的文档路径") String path){
 
