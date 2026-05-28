@@ -72,7 +72,7 @@ public class DocumentDemoController {
         InputStreamResource inputStreamResource = new InputStreamResource(file.getInputStream());
         TikaDocumentReader tikaDocumentReader = new TikaDocumentReader(inputStreamResource);
         List<Document> read = tikaDocumentReader.read();
-        List<Document> split = new TokenTextSplitter().split(read);
+        List<Document> split = TokenTextSplitter.builder().build().split(read);
 
         return split.stream().map(Document::getText).toList();
 
@@ -88,7 +88,7 @@ public class DocumentDemoController {
         InputStreamResource inputStreamResource = new InputStreamResource(file.getInputStream());
         TikaDocumentReader tikaDocumentReader = new TikaDocumentReader(inputStreamResource);
         List<Document> read = tikaDocumentReader.read();
-        List<Document> split = new TokenTextSplitter().split(read);
+        List<Document> split = TokenTextSplitter.builder().build().split(read);
 
         vectorStore.add(split);
     }

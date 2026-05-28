@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
+import org.springframework.data.redis.serializer.GenericJacksonJsonRedisSerializer;
 
 // PUB — 公共配置：Redis 模板配置
 // 为业务 Redis 操作提供 String/Object 通用序列化模板
@@ -26,7 +26,7 @@ public class RedisConfig {
     RedisTemplate<String, Object> stringObjectRedisTemplate = new RedisTemplate<>();
     stringObjectRedisTemplate.setConnectionFactory(redisConnectionFactory);
     // 使用FastJson序列化object
-    stringObjectRedisTemplate.setDefaultSerializer(new Jackson2JsonRedisSerializer<>(Object.class));
+    stringObjectRedisTemplate.setDefaultSerializer(GenericJacksonJsonRedisSerializer.builder().build());
     return stringObjectRedisTemplate;
   }
 }
