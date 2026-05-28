@@ -20,7 +20,6 @@
         <maven.compiler.target>25</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring-ai.version>2.0.0-M7</spring-ai.version>
-        <uni-ai.version>0.1.9</uni-ai.version>
         <jimmer.version>0.10.7</jimmer.version>
         <hutool.version>5.8.44</hutool.version>
         <sa-token.version>1.45.0</sa-token.version>
@@ -57,27 +56,8 @@
         <dependency>
             <groupId>io.github.qifan777</groupId>
             <artifactId>spring-boot-starter-oss</artifactId>
+            <version>0.1.9</version>
         </dependency>
-        <dependency>
-            <groupId>io.github.qifan777</groupId>
-            <artifactId>spring-ai-spark-spring-boot-starter</artifactId>
-        </dependency>
-        <!--        <dependency>-->
-        <!--            <groupId>org.springframework.ai</groupId>-->
-        <!--            <artifactId>spring-ai-moonshot-spring-boot-starter</artifactId>-->
-        <!--        </dependency>-->
-        <dependency>
-            <groupId>io.github.qifan777</groupId>
-            <artifactId>spring-ai-dashscope-spring-boot-starter</artifactId>
-        </dependency>
-        <!--        <dependency>-->
-        <!--            <groupId>org.springframework.ai</groupId>-->
-        <!--            <artifactId>spring-ai-qianfan-spring-boot-starter</artifactId>-->
-        <!--        </dependency>-->
-        <!--        <dependency>-->
-        <!--            <groupId>org.springframework.ai</groupId>-->
-        <!--            <artifactId>spring-ai-zhipuai-spring-boot-starter</artifactId>-->
-        <!--        </dependency>-->
                 <dependency>
                     <groupId>org.springframework.ai</groupId>
                     <artifactId>spring-ai-starter-model-openai</artifactId>
@@ -121,13 +101,6 @@
                 <groupId>org.springframework.ai</groupId>
                 <artifactId>spring-ai-bom</artifactId>
                 <version>${spring-ai.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>io.github.qifan777</groupId>
-                <artifactId>uni-ai-bom</artifactId>
-                <version>${uni-ai.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

@@ -34,48 +34,18 @@ spring:
       password: 12345678
     uri: bolt://localhost:7687
   ai:
-    # 讯飞星火
-    spark:
-      chat:
-        api-key: xxx
-        api-secret: xxx
-        appid: xxx
-        enabled: true
-        options:
-          # 设置模型的domain
-          domain: generalv3.5
-          # 设置模型的baseUrl
-          base-url: https://spark-api.xf-yun.com/v3.5/chat
-    # 阿里灵积
-    dash-scope:
-      api-key: sk-b856625dcbc44fd7aeffae8ce7a8db90
-      enabled: true
-      chat:
-        model: qwen-max
-      embedding:
-        model: text-embedding-v2
-    # 百度千帆
-    #    qian-fan:
-    #      access-key: xxx
-    #      secret-key: xxx
-    #      enabled: true
-    #      chat:
-    #        model: ERNIE-4.0-8K
-    # openai
+    # OpenAI 兼容 API（默认使用 DashScope/阿里通义千问）
     openai:
-      api-key: xxx
-      base-url: xxx
+      api-key: ${DASHSCOPE_API_KEY:sk-your-key-here}
+      base-url: https://dashscope.aliyuncs.com/compatible-mode/v1
       chat:
         enabled: true
         options:
-          model: gpt-3.5-turbo
-    # 智谱
-    zhipuai:
-      api-key: xxx
-      chat:
+          model: qwen-max
+      embedding:
         enabled: true
         options:
-          model: GLM-4
+          model: text-embedding-v2
     vectorstore:
       redis:
         initialize-schema: true
