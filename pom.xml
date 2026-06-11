@@ -12,14 +12,14 @@
         <artifactId>spring-boot-starter-parent</artifactId>
         <groupId>org.springframework.boot</groupId>
         <relativePath/>
-        <version>4.1.0-RC1</version>
+        <version>4.1.0</version>
     </parent>
 
     <properties>
         <maven.compiler.source>25</maven.compiler.source>
         <maven.compiler.target>25</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring-ai.version>2.0.0-M8</spring-ai.version>
+        <spring-ai.version>2.0.0-RC2</spring-ai.version>
         <jimmer.version>0.10.7</jimmer.version>
         <hutool.version>5.8.44</hutool.version>
         <sa-token.version>1.45.0</sa-token.version>
